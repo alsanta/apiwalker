@@ -29,7 +29,6 @@ const Search = (props) => {
     const submitHandler = (e)=>{
         e.preventDefault();
         history.push(`/${formInfo.cat}/${formInfo.id}`)
-
     }
 
 
