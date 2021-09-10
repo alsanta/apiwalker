@@ -1,24 +1,27 @@
-import logo from './logo.svg';
 import './App.css';
+import {
+  BrowserRouter,
+  Switch,
+  Route,
+} from "react-router-dom"
+import StarWars from './components/StarWars';
+import Search from './components/Search';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <h1 className="mb-3" >Use the Force to find what you seek</h1>
+        <Search></Search>
+      </div>
+      <Switch>
+        <div className="App mt-5">
+          <Route exact path ="/:cat/:id">
+            <StarWars></StarWars>
+          </Route>
+        </div>
+      </Switch>
+    </BrowserRouter>
   );
 }
 
